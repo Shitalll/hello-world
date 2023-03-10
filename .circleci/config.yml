@@ -9,7 +9,7 @@ jobs:
      
     steps:
      -checkout
-     - run: echo "A first hello"
+     - run: echo"A first hello"
      - run: mkdir -p my_workspace
      - run: echo "trying outworkspace" > my_workspace/echo-output
      - persist_to_workspace:
