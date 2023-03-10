@@ -9,12 +9,12 @@ jobs:
      
     steps:
      -checkout
-     -run: echo "A first hello"
-     -run: mkdir -p my_workspace
-     -run: echo "trying outworkspace" > my_workspace/echo-output
-     -persist_to_workspace:
-      root:
-      paths:
+     - run: echo "A first hello"
+     - run: mkdir -p my_workspace
+     - run: echo "trying outworkspace" > my_workspace/echo-output
+     - persist_to_workspace:
+        root:
+        paths:
     two:
      docker:
       -image: cimg/ruby:3.0.2
@@ -22,8 +22,8 @@ jobs:
         username: mydockerhub-user
         password: $MYDOCKERHUB_PASSWORD
      steps:
-     - Checkout
-     -run: echo"A more familier hi"
+     -checkout
+     - run: echo"A more familier hi"
      - attach_workspace:
         at: my_workspace
         -run:
@@ -36,7 +36,7 @@ jobs:
      version: 2
      one_and_two:
      jobs:
-     -one
-     -two:
+     - one
+     - two:
        requires:
          -one
