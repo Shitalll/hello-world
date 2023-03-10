@@ -6,6 +6,7 @@ jobs:
     auth:
      username: mydockerhub-user
      password: $DOCKERHUB_PASSWORD
+     
     steps:
      - Checkout
      -run: echo "A first hello"
@@ -13,13 +14,13 @@ jobs:
     two:
      docker:
       -image: cimg/ruby:3.0.2
-      auth:
-       username: mydockerhub-user
-       password: $MYDOCKERHUB_PASSWORD
+       auth:
+        username: mydockerhub-user
+        password: $MYDOCKERHUB_PASSWORD
      steps:
      - Checkout
      -run: echo"A more familier hi"
-     -run:
+     -run: sleep 15
     workflows:
      version: 2
      one_and_two:
