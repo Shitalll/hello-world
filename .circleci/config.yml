@@ -7,7 +7,7 @@ jobs:
      username: mydockerhub-user
      password: $DOCKERHUB_PASSWORD
     steps:
-     - checkout
+     - Checkout
      -run: echo "A first hello"
      -run: sleep 25
     two:
@@ -17,7 +17,7 @@ jobs:
        username: mydockerhub-user
        password: $MYDOCKERHUB_PASSWORD
      steps:
-     - checkout
+     - Checkout
      -run: echo"A more familier hi"
      -run:
     workflows:
